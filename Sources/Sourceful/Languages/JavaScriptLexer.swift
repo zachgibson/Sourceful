@@ -21,7 +21,7 @@ public class JavaScriptLexer: SourceCodeRegexLexer {
         
         // Functions
         
-        generators.append(regexGenerator("\\b(println|print)(?=\\()", tokenType: .identifier))
+        generators.append(regexGenerator(#"[a-z]+?(?=\()"#, tokenType: .identifier))
         
         generators.append(regexGenerator("(?<=(\\s|\\[|,|:))(\\d|\\.|_)+", tokenType: .number))
         
