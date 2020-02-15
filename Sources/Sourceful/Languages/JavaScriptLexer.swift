@@ -23,7 +23,7 @@ public class JavaScriptLexer: SourceCodeRegexLexer {
         
         generators.append(regexGenerator(#"[a-z]+?(?=\()"#, tokenType: .identifier))
         
-        generators.append(regexGenerator("(?<=(\\s|\\[|,|:))(\\d|\\.|_)+", tokenType: .number))
+        generators.append(regexGenerator("(?<=([(]|\\s|\\[|,|:))(\\d|\\.|_)+", tokenType: .number))
         
         generators.append(regexGenerator("\\.[A-Za-z_]+\\w*", tokenType: .identifier))
         
