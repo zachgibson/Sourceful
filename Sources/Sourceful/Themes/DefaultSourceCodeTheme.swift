@@ -49,7 +49,10 @@ public struct DefaultSourceCodeTheme: SourceCodeTheme {
 			
 		case .editorPlaceholder:
 			return backgroundColor
-		}
+        
+        case .operators:
+            return Color(red: 213/255, green: 71/255, blue: 71/255, alpha: 1.0)
+        }
 		
 	}
 	
