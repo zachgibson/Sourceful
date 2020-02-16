@@ -47,6 +47,10 @@ public class JavaScriptLexer: SourceCodeRegexLexer {
 
         // Single-line string literal
         generators.append(regexGenerator("(\"|@\")[^\"\\n]*(@\"|\")", tokenType: .string))
+        
+        let operators = "& ! + - * / % = | ^ ? : < > delete void typeof ~ in instanceof".components(separatedBy: " ")
+        
+        generators.append(keywordGenerator(operators, tokenType: .operators))
 
         return generators.compactMap( { $0 })
     }()
